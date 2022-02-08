@@ -27,6 +27,10 @@
     padding: 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -39,6 +43,13 @@ ul {
 img {
     width: 100%;
     height: auto;
+    max-width: 400px;
+}
+
+input,
+button {
+    border: none;
+    background: none;
 }
 
 /*
@@ -56,6 +67,17 @@ body {
     --primary-color: #0065FC;
     --primary-color-light: #DEEBFF;
     --gray: #F2F2F2;
+    --main-raidus: 15px
+}
+
+::placeholder {
+    font-weight: bold;
+    color: initial;
+}
+
+input,
+button {
+    padding: 15px;
 }
 
 .container {
@@ -65,13 +87,15 @@ body {
 /*
     * Main header
     -------------------------------
+    TODO :
+     * Rajouter le style sur mobile
 */
 
 .main-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 130px;
+    height: 100px;
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -100,8 +124,112 @@ body {
 
 /*
     * Search Zone
-    TODO : Add styles for search zone
     -------------------------------
+    TODO :
+     * Rajouter le style au survol
+     * Rajouter le style sur mobile
 */
 
+.search-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+.search-zone__subtitle {
+    margin-top: 5px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.search-form__input {
+    display: inline-flex;
+    font-weight: bold;
+}
+
+.search-form__input i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    aspect-ratio: 1;
+    background: var(--gray);
+    border-radius: var(--main-raidus) 0 0 var(--main-raidus);
+}
+
+.search-form__input input {
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+}
+
+.search-form__input button {
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 0 var(--main-raidus) var(--main-raidus) 0;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.filters__field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid var(--gray);
+    border-radius: 50px;
+    height: 50px;
+}
+
+.filters__field i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 105%;
+    position: relative;
+    left: -2px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+.filters__field span {
+    margin: 0 15px;
+}
+
+.filters__field input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.search-form__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+
+.search-form__info i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    aspect-ratio: 1;
+    border: 1px solid var(--gray);
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 12px;
+}

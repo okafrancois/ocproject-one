@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Booky</title>
     <link rel="stylesheet" href="css/main.css">
+    <script async src="https://kit.fontawesome.com/7dbd1dd4bc.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="main-header container">
@@ -16,40 +17,40 @@
         </nav>
     </header>
     <main>
-        <section class="search-zone">
-            <h2 class="title">Trouvez votre hébergement pour des vacances de rêve</h2>
-            <p class="subtitle">En plein centre ville ou en pleine nature</p>
+        <section class="search-zone container">
+            <div>
+                <h2 class="search-zone__title">Trouvez votre hébergement pour des vacances de rêve</h2>
+                <p class="search-zone__subtitle">En plein centre ville ou en pleine nature</p>
+            </div>
             <form action="/" class="search-zone__form search-form">
                 <div class="search-form__input">
-                    <label>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <input type="search" name="seach-input" placeholder="Marseille, France">
-                    </label>
+                    <label><i class="fas fa-map-marker-alt"></i></label>
+                    <input type="search" name="seach-input" placeholder="Marseille, France">
                     <button>Rechercher</button>
                 </div>
-                <fieldset class="search-form__filters filters">
-                    <legend class="filters__title">Filters</legend>
+                <div class="search-form__filters filters">
+                    <span class="filters__title">Filters</span>
                     <label class="filters__field">
                         <i class="fas fa-money-bill-wave"></i>
-                        Économique
+                        <span>Économie</span>
                         <input type="checkbox" name="low-budget">
                     </label>
                     <label class="filters__field">
                         <i class="fas fa-child"></i>
-                        Familial
+                        <span>Familial</span>
                         <input type="checkbox" name="for-family">
                     </label>
                     <label class="filters__field">
                         <i class="fas fa-heart"></i>
-                        Romantique
+                        <span>Romantique</span>
                         <input type="checkbox" name="for-couple">
                     </label>
                     <label class="filters__field">
                         <i class="fas fa-dog"></i>
-                        Animaux autorisés
+                        <span>Animaux autorisés</span>
                         <input type="checkbox" name="dog-allow">
                     </label>
-                </fieldset>
+                </div>
                 <div class="search-form__info">
                     <i class="fas fa-info"></i>
                     <p>Plus de <span class="result-counter">500</span> logements sont disponibles ans cette ville</p>
