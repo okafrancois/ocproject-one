@@ -57,3 +57,51 @@ body {
     --primary-color-light: #DEEBFF;
     --gray: #F2F2F2;
 }
+
+.container {
+    padding: 25px 50px;
+}
+
+/*
+    * Main header
+    -------------------------------
+*/
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.main-header__logo {
+    max-width: 60px;
+}
+
+.navigation {
+    display: flex;
+    height: 100%;
+}
+
+.navigation__item {
+    display: inline-block;
+    border-top: 2px solid transparent;
+    padding: 50px 25px;
+    transition: border-top-color 0.3s, color 0.3s;
+}
+
+.navigation__item--active,
+.navigation__item:hover {
+    border-top-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/*
+    * Search Zone
+    TODO : Add styles for search zone
+    -------------------------------
+*/
+
+
