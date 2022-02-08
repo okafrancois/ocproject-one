@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Booky</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="main-header container">
+        <a href="#">
+            <img class="main-header__logo" src="images/logo/Booki.svg" alt="Logo de la page sur lequel il est écrit Booki">
+        </a>
+        <nav class="main-header__navigation navigation">
+            <a href="#" class="navigation__item--active">Hébergements</a>
+            <a href="#" class="navigation__item">Activités</a>
+        </nav>
+    </header>
+    <main>
+        <section class="search-zone">
+            <h2 class="title">Trouvez votre hébergement pour des vacances de rêve</h2>
+            <p class="subtitle">En plein centre ville ou en pleine nature</p>
+            <form action="/" class="search-zone__form search-form">
+                <div class="search-form__input">
+                    <label>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="search" name="seach-input" placeholder="Marseille, France">
+                    </label>
+                    <button>Rechercher</button>
+                </div>
+                <fieldset class="search-form__filters filters">
+                    <legend class="filters__title">Filters</legend>
+                    <label class="filters__field">
+                        <i class="fas fa-money-bill-wave"></i>
+                        Économique
+                        <input type="checkbox" name="low-budget">
+                    </label>
+                    <label class="filters__field">
+                        <i class="fas fa-child"></i>
+                        Familial
+                        <input type="checkbox" name="for-family">
+                    </label>
+                    <label class="filters__field">
+                        <i class="fas fa-heart"></i>
+                        Romantique
+                        <input type="checkbox" name="for-couple">
+                    </label>
+                    <label class="filters__field">
+                        <i class="fas fa-dog"></i>
+                        Animaux autorisés
+                        <input type="checkbox" name="dog-allow">
+                    </label>
+                </fieldset>
+                <div class="search-form__info">
+                    <i class="fas fa-info"></i>
+                    <p>Plus de <span class="result-counter">500</span> logements sont disponibles ans cette ville</p>
+                </div>
+            </form>
+        </section>
+        <section>
+            <div>
+                <h2>Hébergements à <span>marseille</span></h2>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chambre d'hotel">
+                            <div>
+                                <h3>Auberge La Cannebière</h3>
+                                <p>Nuit à partir de <span>25 <span>€</span></span></p>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <button>Afficher plus</button>
+            </div>
+            <div>
+                <h2>Les plus populaires</h2>
+                <i class="fas fa-chart-line"></i>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chambre d'hotel">
+                            <div>
+                                <h3>Auberge La Cannebière</h3>
+                                <p>Nuit à partir de <span>25 <span>€</span></span></p>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <button>Afficher plus</button>
+            </div>
+        </section>
+        <section class="city-activities">
+            <h2>Activités à <span>Marseille</span></h2>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chambre d'hotel">
+                        <div>
+                            <h3>Auberge La Cannebière</h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chambre d'hotel">
+                        <div>
+                            <h3>Auberge La Cannebière</h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+<footer class="main-footer">
+    <nav class="main-footer__menu">
+        <h2>A propos</h2>
+        <ul>
+            <li><a href="#">Fonctionnement du site</a></li>
+            <li><a href="#">Conditions générales de vente</a></li>
+            <li><a href="#">Données et confidentialité</a></li>
+        </ul>
+    </nav>
+    <nav class="main-footer__menu">
+        <h2>Nos hébergements</h2>
+        <ul>
+            <li><a href="#">Charte qualité</a></li>
+            <li><a href="#">Soumettre votre hôtel</a></li>
+        </ul>
+    </nav>
+    <nav class="main-footer__menu">
+        <h2>Assistance</h2>
+        <ul>
+            <li><a href="#">Centre d'aide</a></li>
+            <li><a href="#">Nous contacter</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+</html>

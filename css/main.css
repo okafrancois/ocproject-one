@@ -1,0 +1,59 @@
+/*
+    Index
+    -------------------------------
+    * Imports
+    * Reset
+    * Config
+    * Main header
+*/
+
+/*
+    * Imports
+    -------------------------------
+*/
+
+@import "normalize.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+/*
+    * Reset
+    -------------------------------
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/*
+    * Config
+    -------------------------------
+*/
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+:root {
+    --desktop-breakpoint: 992px;
+    --mobile-breakpoint: 768px;
+    --primary-color: #0065FC;
+    --primary-color-light: #DEEBFF;
+    --gray: #F2F2F2;
+}
