@@ -8,12 +8,12 @@
 </head>
 <body>
 <header class="main-header container">
-    <a href="#">
-        <img class="main-header__logo" src="images/logo/Booki.svg" alt="Logo de la page sur lequel il est écrit Booki">
+    <a href="#" class="main-header__logo">
+        <img src="images/logo/Booki.svg" alt="Logo de la page sur lequel il est écrit Booki">
     </a>
     <nav class="main-header__navigation navigation">
-        <a href="#" class="navigation__item navigation__item--active">Hébergements</a>
-        <a href="#" class="navigation__item">Activités</a>
+        <a href="#city-lodges" class="navigation__item navigation__item--active">Hébergements</a>
+        <a href="#city-activities" class="navigation__item">Activités</a>
     </nav>
 </header>
 <main>
@@ -24,9 +24,10 @@
         </div>
         <form action="/" class="search-form">
             <div class="search-form__input">
-                <label for="search-input"><i class="fas fa-map-marker-alt"></i></label>
+                <label for="search-input" class="location-icon"><i class="fas fa-map-marker-alt"></i></label>
                 <input type="search" name="seach-input" id="search-input" placeholder="Marseille, France">
-                <button>Rechercher</button>
+                <button><i class="fas fa-search search-icon hide-on-desktop"></i><span
+                        class="hide-on-mobile">Rechercher</span></button>
             </div>
             <div class="filters">
                 <span class="filters__title">Filters</span>
@@ -57,7 +58,7 @@
             </div>
         </form>
     </section>
-    <section class="lodge-gallery container">
+    <section id="city-lodges" class="lodge-gallery container">
         <div class="lodge-gallery__item">
             <h2>Hébergements à <span>marseille</span></h2>
             <ul class="card-gallery">
@@ -235,7 +236,7 @@
             </ul>
         </div>
     </section>
-    <section class="city-activities container">
+    <section id="city-activities" class="city-activities container">
         <h2>Activités à <span>Marseille</span></h2>
         <ul class="masonry-gallery">
             <li class="masonry-card masonry-card--featured">

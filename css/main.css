@@ -8,6 +8,7 @@
     * Lodge gallery styles
     * Masonry gallery
     * Footer styles
+    * Mobile breakpoint styles
 */
 
 /*
@@ -63,6 +64,7 @@ button {
     cursor: pointer;
 }
 
+a:hover,
 .link-btn:hover {
     color: var(--primary-color);
 }
@@ -71,6 +73,9 @@ button {
     * Config
     -------------------------------
 */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Raleway', sans-serif;
@@ -110,6 +115,10 @@ button {
     padding: 25px 50px;
 }
 
+.hide-on-desktop {
+    display: none !important;
+}
+
 /*
     * Main header styles
     -------------------------------
@@ -117,50 +126,45 @@ button {
 
 .main-header {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
-    height: 100px;
     padding-top: 0;
     padding-bottom: 0;
 }
 
 .main-header__logo {
     max-width: 60px;
+    margin: 30px 20px;
 }
 
 .navigation {
     display: flex;
-    align-items: stretch;
-    height: 100%;
 }
 
 .navigation__item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 25px;
+    width: 100%;
+    padding: 0 30px;
     border-top: 2px solid transparent;
     transition: border-top-color 0.3s, color 0.3s;
 }
 
 .navigation__item--active,
 .navigation__item:hover {
-    border-top-color: var(--primary-color);
+    border-color: var(--primary-color) !important;
     color: var(--primary-color);
 }
 
 /*
     * Search Zone
     -------------------------------
-    TODO :
-     * Rajouter le style au survol
-     * Rajouter le style sur mobile
 */
 
 .search-zone {
     display: flex;
     flex-direction: column;
-    padding-top: 0;
     padding-bottom: 20px;
     gap: 40px;
 }
@@ -178,10 +182,13 @@ button {
 
 .search-form__input {
     display: inline-flex;
+    width: max-content;
     font-weight: bold;
+    border: 1px solid var(--gray);
+    border-radius: var(--default-radius);
 }
 
-.search-form__input i {
+.search-form__input .location-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -189,11 +196,6 @@ button {
     aspect-ratio: 1/1; /* la largeur est égale à 1 fois la hauteur */
     background: var(--gray);
     border-radius: var(--default-radius) 0 0 var(--default-radius);
-}
-
-.search-form__input input {
-    border-top: 1px solid var(--gray);
-    border-bottom: 1px solid var(--gray);
 }
 
 .search-form__input button {
@@ -290,6 +292,7 @@ button {
 .card-gallery {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 30px;
 }
 
@@ -302,7 +305,6 @@ button {
 }
 
 .card-item {
-    max-width: fit-content;
     min-width: 200px;
     padding: 5px;
     border-radius: var(--default-radius);
@@ -318,7 +320,6 @@ button {
 .card-item__banner {
     display: block;
     width: 100%;
-    max-width: 300px;
     aspect-ratio: 2/1; /* La hauteur du bloc correspond à 50% de la largeur  */
     border-radius: var(--default-radius) var(--default-radius) 0 0;
     overflow: hidden;
@@ -427,14 +428,15 @@ button {
     * Footer styles
     -------------------------------
 */
+
 .main-footer {
     display: flex;
     justify-content: space-between;
-    gap: 20px 0;
+    gap: 40px 0;
     flex-wrap: wrap;
     background: var(--gray);
     padding: 50px;
-    margin-top: 20px;
+    margin-top: 35px;
 }
 
 .main-footer__item {
@@ -445,4 +447,106 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px 0;
+}
+
+
+/*
+    * Mobile breakpoint styles *
+    -------------------------------
+*/
+
+@media all and (max-width: 768px) {
+    /* Config */
+    .container {
+        padding: 40px 25px;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .hide-on-desktop {
+        display: initial !important;
+    }
+
+    /* header styles */
+    .main-header {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .navigation {
+        width: 100%;
+    }
+
+    .navigation__item {
+        border-top: none;
+        padding: 10px;
+        border-bottom: 2px solid var(--gray);
+    }
+
+    /* search zone styles */
+    .search-form__input button {
+        border-radius: var(--default-radius);
+        font-size: 20px;
+    }
+
+    .search-form__info {
+        align-items: baseline;
+    }
+
+    /* Lodge gallery */
+    .lodge-gallery {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .lodge-gallery__item {
+        padding: 40px 20px;
+        border-radius: initial;
+        background: none;
+    }
+
+    .lodge-gallery__item.widget {
+        background: var(--gray);
+        width: 100%;
+    }
+
+    .card-gallery {
+        gap: 20px;
+    }
+
+    .card-gallery--vertical .card-item {
+        aspect-ratio: 2.5/1;
+    }
+
+    .card-gallery__item {
+        flex-basis: 100%;
+    }
+
+    .card-item__banner {
+        aspect-ratio: 2.5/1;
+    }
+
+    /* masonry gallery */
+    .masonry-gallery {
+        flex-flow: column;
+        height: fit-content;
+        gap: 20px;
+    }
+
+    .masonry-card {
+        width: 100%;
+    }
+
+    .masonry-card__cover {
+        aspect-ratio: 2.5/1;
+    }
+
+    /* footer */
+    .main-footer__item {
+        width: 100%;
+    }
 }
