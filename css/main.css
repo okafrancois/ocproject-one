@@ -227,7 +227,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 105%;
+    height: 108%;
     position: relative;
     left: -2px;
     aspect-ratio: 1/1;
@@ -493,6 +493,14 @@ button {
 
     .search-form__info {
         align-items: baseline;
+    }
+
+    .filters {
+        gap: 15px;
+    }
+
+    .filters__title {
+        width: 100%;
     }
 
     /* Lodge gallery */
