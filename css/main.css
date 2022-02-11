@@ -6,6 +6,7 @@
     * Config
     * Main header styles
     * Lodge gallery styles
+    * Masonry gallery
     * Footer styles
 */
 
@@ -23,14 +24,19 @@
     -------------------------------
 */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+html {
+    font-size: 62.5%;
 }
 
 body {
     overflow-x: hidden;
+    font-size: 1.6rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -45,7 +51,6 @@ ul {
 img {
     width: 100%;
     height: auto;
-    max-width: 400px; /* for dev */
     object-fit: cover;
 }
 
@@ -97,18 +102,17 @@ h2 {
 
 input,
 button {
-    padding: 15px;
+    padding: 1.5rem;
 }
 
 .container {
-    padding: 25px 50px;
+    margin: auto;
+    padding: 2.5rem 5rem;
 }
 
 /*
     * Main header styles
     -------------------------------
-    TODO :
-     * Rajouter le style sur mobile
 */
 
 .main-header {
@@ -181,8 +185,8 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    aspect-ratio: 1; /* la largeur est égale à 1 fois la hauteur */
+    height: 4rem;
+    aspect-ratio: 1/1; /* la largeur est égale à 1 fois la hauteur */
     background: var(--gray);
     border-radius: var(--default-radius) 0 0 var(--default-radius);
 }
@@ -211,7 +215,7 @@ button {
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 50px;
+    height: 4rem;
     min-width: fit-content;
     border: 2px solid var(--gray);
     border-radius: 50px;
@@ -224,7 +228,7 @@ button {
     height: 105%;
     position: relative;
     left: -2px;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background: var(--primary-color-light);
     color: var(--primary-color);
@@ -255,7 +259,7 @@ button {
     align-items: center;
     justify-content: center;
     height: 25px;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     border: 1px solid var(--gray);
     border-radius: 50%;
     color: var(--primary-color);
@@ -280,7 +284,6 @@ button {
 }
 
 .lodge-gallery__item.widget {
-    max-width: 400px;
     width: 40%;
 }
 
@@ -295,11 +298,12 @@ button {
 }
 
 .card-gallery__item {
-    width: calc((100% - 4rem) / 3); /* on retire les 4rem correspondant aux paddings left et right du block global" */
+    flex-basis: calc((100% - 4rem) / 3); /* on retire les 4rem correspondant aux paddings left et right du block global" */
 }
 
 .card-item {
-    min-width: 250px;
+    max-width: fit-content;
+    min-width: 200px;
     padding: 5px;
     border-radius: var(--default-radius);
     overflow: hidden;
@@ -314,6 +318,7 @@ button {
 .card-item__banner {
     display: block;
     width: 100%;
+    max-width: 300px;
     aspect-ratio: 2/1; /* La hauteur du bloc correspond à 50% de la largeur  */
     border-radius: var(--default-radius) var(--default-radius) 0 0;
     overflow: hidden;
@@ -326,14 +331,13 @@ button {
     padding: 0.5rem;
 }
 
-.card-gallery--vertical .card-gallery__item {
+.card-gallery--vertical .card-item {
     width: 100%;
     aspect-ratio: 2/1;
 }
 
 .card-gallery--vertical .card-item__container {
     display: flex;
-    justify-content: space-between;
     height: 100%;
 }
 
@@ -343,21 +347,28 @@ button {
     border-radius: var(--default-radius) 0 0 var(--default-radius);
 }
 
-/* TODO:
-    régler l'alignement des reviews
-    */
 .card-gallery--vertical .card-item__content {
-    justify-content: space-between;
+    position: relative;
+    justify-content: flex-start;
     padding: 1rem;
 }
 
 .lodge-pricing {
+    font-size: 1.5rem;
+}
+
+.lodge-price {
     font-weight: bold;
 }
 
 .review {
     font-size: 0.8em;
     color: var(--gray);
+}
+
+.card-gallery--vertical .review {
+    position: absolute;
+    bottom: 0.5rem;
 }
 
 .review__star.active {
@@ -374,6 +385,48 @@ button {
     font-size: 1.5rem;
 }
 
+/* Masonry Gallery */
+
+.masonry-gallery {
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: var(--default-radius);
+    gap: 2rem;
+    height: 450px;
+}
+
+.masonry-card {
+    display: flex;
+    height: calc(50% - 2rem);
+    width: calc(25% - 2rem);
+    max-width: 400px;
+    background: #fff;
+    box-shadow: 0 4px 15px -5px #43434359;
+    border-radius: var(--default-radius);
+}
+
+.masonry-card__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.masonry-card__cover {
+    display: block;
+    height: 100%;
+    max-height: calc(100% - 6rem);
+    border-radius: var(--default-radius) var(--default-radius) 0 0;
+}
+
+.masonry-card__content {
+    padding: 2rem;
+}
+
+.masonry-card--featured {
+    height: 100%;
+}
+
 /*
     * Footer styles
     -------------------------------
@@ -385,13 +438,14 @@ button {
     flex-wrap: wrap;
     background: var(--gray);
     padding: 50px;
+    margin-top: 2rem;
 }
 
-.main-footer__menu {
+.main-footer__item {
     width: calc(100% / 3);
 }
 
-.main-footer__menu ul {
+.main-footer__item ul {
     display: flex;
     flex-direction: column;
     gap: 0.5rem 0;
