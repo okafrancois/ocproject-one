@@ -408,7 +408,7 @@ button {
 .masonry-card {
     display: flex;
     flex-grow: 1;
-    aspect-ratio: 1.5/1;
+    aspect-ratio: 2.5/1;
     width: calc((100% - 9vw) / 4);
     max-width: 480px;
     background: #fff;
