@@ -235,8 +235,8 @@ button {
 }
 
 .filters__field:hover {
-    background: #ddecff;
-    border-color: #ddecff;
+    background: var(--primary-color-light);
+    border-color: var(--primary-color-light);
 }
 
 .filters__field i {
@@ -503,7 +503,7 @@ button {
     -------------------------------
 */
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1500px) {
     .card-gallery {
         gap: 30px;
     }
